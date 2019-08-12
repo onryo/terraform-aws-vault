@@ -121,6 +121,7 @@ data "template_file" "user_data_vault_cluster" {
     consul_cluster_tag_key   = var.consul_cluster_tag_key
     consul_cluster_tag_value = var.consul_cluster_name
     kms_key_id               = data.aws_kms_alias.vault-example.target_key_id
+    vault_elb_dns_name       = module.vault_elb.load_balancer_dns_name
     create_dns_entry         = var.create_dns_entry
     vault_domain_name        = var.vault_domain_name
     hosted_zone_domain_name  = var.hosted_zone_domain_name
