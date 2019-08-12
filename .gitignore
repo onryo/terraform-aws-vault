@@ -2,6 +2,7 @@
 .terraform
 terraform.tfstate
 terraform.tfvars
+*.tfvars
 *.tfstate*
 
 # OS X files

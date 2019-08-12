@@ -7,8 +7,13 @@ variable "security_group_id" {
   description = "The ID of the security group to which we should add the Vault security group rules"
 }
 
-variable "allowed_inbound_cidr_blocks" {
-  description = "A list of CIDR-formatted IP address ranges from which the EC2 Instances will allow connections to Vault"
+variable "allowed_api_inbound_cidr_blocks" {
+  description = "A list of CIDR-formatted IP address ranges from which the EC2 Instances will allow connections to Vault API"
+  type        = list(string)
+}
+
+variable "allowed_cluster_inbound_cidr_blocks" {
+  description = "A list of CIDR-formatted IP address ranges from which the EC2 Instances will allow connections to Vault cluster service"
   type        = list(string)
 }
 

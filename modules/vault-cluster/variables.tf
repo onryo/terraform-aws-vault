@@ -19,8 +19,13 @@ variable "vpc_id" {
   description = "The ID of the VPC in which to deploy the cluster"
 }
 
-variable "allowed_inbound_cidr_blocks" {
-  description = "A list of CIDR-formatted IP address ranges from which the EC2 Instances will allow connections to Vault"
+variable "allowed_api_inbound_cidr_blocks" {
+  description = "A list of CIDR-formatted IP address ranges from which the EC2 Instances will allow connections to Vault API"
+  type        = list(string)
+}
+
+variable "allowed_cluster_inbound_cidr_blocks" {
+  description = "A list of CIDR-formatted IP address ranges from which the EC2 Instances will allow connections to Vault cluster service"
   type        = list(string)
 }
 
