@@ -81,7 +81,3 @@ output "consul_cluster_cluster_tag_key" {
 output "consul_cluster_cluster_tag_value" {
   value = module.consul_cluster.cluster_tag_value
 }
-
-output "user_data_vault_cluster" {
-  value = data.template_file.user_data_vault_cluster.rendered
-}
