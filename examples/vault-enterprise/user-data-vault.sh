@@ -24,6 +24,8 @@ readonly VAULT_TLS_KEY_FILE="/opt/vault/tls/vault.key.pem"
   --auto-unseal-kms-key-region "${aws_region}" \
   %{ if create_dns_entry == "true" ~}
 --api-addr "https://${vault_domain_name}.${hosted_zone_domain_name}"
+  %{ else ~}
+--api-addr "https://${vault_elb_dns_name}"
   %{ endif ~}
 
 # When you ssh to one of the instances in the vault cluster and initialize the server
