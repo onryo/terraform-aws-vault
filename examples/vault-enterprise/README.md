@@ -1,4 +1,4 @@
-# Vault auto unseal example
+# Vault Enterprise Example
 
 This folder shows an example of Terraform code that deploys a [Vault][vault] cluster
 in AWS with [auto unseal][auto_unseal]. Auto unseal is a Vault feature
