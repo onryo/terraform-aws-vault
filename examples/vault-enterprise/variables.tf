@@ -105,6 +105,18 @@ variable "vault_instance_type" {
   default     = "t2.micro"
 }
 
+variable "vault_elb_vpc_id" {
+  description = "VPC ID to attach to Vault ELB"
+  type        = string
+  default     = null
+}
+
+variable "vault_elb_subnet_ids" {
+  description = "List of subnet IDs to attach to Vault ELB"
+  type        = list(string)
+  default     = []
+}
+
 variable "consul_instance_type" {
   description = "The type of EC2 Instance to run in the Consul ASG"
   type        = string
