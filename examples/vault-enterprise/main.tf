@@ -157,8 +157,8 @@ module "vault_elb" {
 
   name = var.vault_cluster_name
 
-  vpc_id     = data.aws_vpc.default.id
-  subnet_ids = data.aws_subnet_ids.default.ids
+  vpc_id     = var.vault_elb_vpc_id == null ? data.aws_vpc.default.id : var.vault_elb_vpc_id
+  subnet_ids = length(var.vault_elb_subnet_ids) == 0 ? data.aws_subnet_ids.default.ids : var.vault_elb_subnet_ids
 
   # Associate the ELB with the instances created by the Vault Autoscaling group
   vault_asg_name = module.vault_cluster.asg_name
